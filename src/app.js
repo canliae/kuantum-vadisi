@@ -66,7 +66,7 @@ function nextTimer() {
 }
 
 function getCardText() {
-  fetch("https://coderwithsamet.github.io/kimya/json/question.json")
+  fetch("https://github.com/canliae/kuantum-vadisi/blob/main/json/question.json")
     .then((data) => data.json())
     .then((newData) => {
       cardHeader.innerHTML = `<h2>${
