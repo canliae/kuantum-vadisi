@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+html li {
+  list-style-type: none;
+}
+html a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+
+  background-image: url("https://biplatformu.com/wp-content/uploads/2020/05/kimya.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+}
+
+.card-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  width: 720px;
+  height: 550px;
+  color: #fff;
+  background: #07182e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  place-content: center;
+  place-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 15px;
+}
+.card h2 {
+  font-size: 2.5em;
+  text-align: center;
+  z-index: 1;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  background-image: linear-gradient(180deg, #00b7ff, #ff30ff);
+  height: 170%;
+  animation: rotBGimg 4s linear infinite;
+  transition: all 0.2s linear;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  background: #07182e;
+  inset: 6px;
+  border-radius: 20px;
+}
+
+.timer {
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+  width: 250px;
+  height: 120px;
+  color: #fff;
+  background: #07182e;
+  border-radius: 20px;
+}
+.timer h1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 4.1rem;
+  left: 65%;
+  top: 46%;
+}
+.timer i {
+  position: absolute;
+  font-size: 3rem;
+  left: 25%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+}
+
+.next-quest #next {
+  width: 250px;
+  height: 120px;
+  padding: 25px 35px;
+  border: unset;
+  border-radius: 20px;
+  color: #e8e8e8;
+  z-index: 1;
+  background: linear-gradient(90deg, #07182e, #07182e);
+  position: relative;
+  font-weight: 1000;
+  font-size: 50px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+.next-quest #next::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #e8e8e8;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+.next-quest #next:hover {
+  color: #212121;
+}
+.next-quest #next:hover::before {
+  width: 100%;
+}
+.next-quest #next:active {
+  transform: scale(0.97);
+}
+
+.game-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background-image: url("https://biplatformu.com/wp-content/uploads/2020/05/kimya.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-container h1 {
+  position: relative;
+  font-size: 6.5rem;
+  color: #000;
+  top: -20%;
+  text-transform: uppercase;
+}
+.game-container h1::first-letter {
+  font-size: 8rem;
+  color: #0892f1;
+}
+.game-container h1::before {
+  position: absolute;
+  content: "";
+  width: 350px;
+  height: 6px;
+  background: #0892f1;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.7s ease;
+}
+.game-container h1:hover::before {
+  width: 600px;
+}
+
+#start-game {
+  position: relative;
+  padding: 1em 1.8em;
+  outline: none;
+  border: 1px solid #303030;
+  background: #212121;
+  color: #0892f1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  top: -5%;
+}
+#start-game:hover {
+  box-shadow: 0 0 10px #0892f1, 0 0 25px #001eff, 0 0 50px #0892f1;
+  transition-delay: 0.6s;
+}
+#start-game span {
+  position: absolute;
+}
+#start-game span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, #0892f1);
+}
+#start-game span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #0892f1);
+}
+#start-game span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #0892f1);
+}
+#start-game:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.3s;
+}
+#start-game:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.8s;
+  transition-delay: 0.2s;
+}
+#start-game:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.7s;
+  transition-delay: 0.2s;
+}
+#start-game:active {
+  background: #0892f1;
+  background: linear-gradient(to top right, #0892f1, #001eff);
+  color: #bfbfbf;
+  box-shadow: 0 0 8px #0892f1, 0 0 8px #001eff, 0 0 8px #0892f1;
+  transition: 0.1s;
+}
+#start-game:active
+  span:nth-child(1)
+  span:nth-child(2)
+  span:nth-child(2)
+  span:nth-child(2) {
+  transition: none;
+  transition-delay: none;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .card-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    width: 95%;
+    height: 550px;
+  }
+  .card h2 {
+    font-size: 2rem;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    background-image: linear-gradient(180deg, #00b7ff, #ff30ff);
+    height: 235%;
+    animation: rotBGimg 4s linear infinite;
+    transition: all 0.2s linear;
+  }
+  .timer {
+    width: 95%;
+    margin: 20px;
+  }
+  .next-quest #next {
+    font-size: 40px;
+    padding: 10px 20px;
+    margin: 20px;
+    width: 100%;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    width: 95%;
+    height: 550px;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    background-image: linear-gradient(180deg, #00b7ff, #ff30ff);
+    height: 195%;
+    animation: rotBGimg 4s linear infinite;
+    transition: all 0.2s linear;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timer {
+    width: 95%;
+    margin: 20px;
+  }
+  .timer h1 {
+    font-size: 3.5rem;
+  }
+  .timer i {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .game-container h1 {
+    transition: all 0.3s ease;
+    font-size: 3rem;
+  }
+  .game-container h1::first-letter {
+    font-size: 5rem;
+    color: #0892f1;
+  }
+  .game-container h1::before {
+    position: absolute;
+    content: "";
+    width: 250px;
+    height: 6px;
+    background: #0892f1;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.7s ease;
+  }
+  .game-container h1:hover::before {
+    width: 350px;
+  }
+  #start-game {
+    font-size: 20px;
+    padding: 20px 15px;
+  }
+}
