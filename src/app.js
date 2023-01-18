@@ -66,7 +66,7 @@ function nextTimer() {
 }
 
 function getCardText() {
-  fetch("https://github.com/canliae/kuantum-vadisi/blob/main/json/question.json")
+  fetch("https://raw.githubusercontent.com/canliae/kuantum-vadisi/main/json/question.json")
     .then((data) => data.json())
     .then((newData) => {
       cardHeader.innerHTML = `<h2>${
